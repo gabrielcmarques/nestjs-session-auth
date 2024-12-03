@@ -7,13 +7,13 @@ import {
   HttpStatus,
   Post,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { UserService } from 'src/user/user.service';
 import { Response } from 'express';
-// import dayjs from 'dayjs';
 import * as dayjs from 'dayjs';
-
+import { SessionGuard } from './session.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -63,5 +63,31 @@ export class AuthController {
     });
 
     return res.send({ message: 'Login successful' });
+  }
+
+  @Post('logout')
+  async logout(@Res() res: Response, @Body('sessionId') sessionId: string) {
+    try {
+      await this.authService.destroySession(sessionId);
+
+      res.clearCookie('SESSION_ID', {
+        httpOnly: true,
+        // secure: true, // Use only in production with HTTPS
+      });
+
+      return res.status(HttpStatus.OK).send({ message: 'Logout successful' });
+    } catch (error) {
+      throw new HttpException(
+        'ERROR: Unable to logout',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
+  // Example of using the SessionGuard for a specific route
+  @Post('protected-route')
+  @UseGuards(SessionGuard) // Protect this route with SessionGuard
+  async protectedRoute(@Res() res: Response) {
+    return res.status(HttpStatus.OK).send({ message: 'You have access!' });
   }
 }

@@ -1,0 +1,76 @@
+/* General body styling */
+body {
+    background-color: #121212; /* Dark background for dark mode */
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* White color for the heading */
+}
+
+/* Styling for the posts list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styling for individual post items */
+li {
+    background-color: #1e1e1e; /* Dark background for each post */
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+/* Post item hover effect */
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Styling for post title */
+li h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff; /* White color for the title */
+}
+
+/* Styling for post content */
+li p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #d1d1d1; /* Light grey text color */
+}
+
+/* Styling for small elements (metadata) */
+/* li small {
+    display: inline-flex;
+    color: #a1a1a1; 
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+} */
+
+/* Styling for the post metadata container */
+.post-meta {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Ensures that the items wrap to a new line on smaller screens */
+    gap: 1rem; /* Adds space between each <small> element */
+}
+
+/* Styling for individual small elements (if needed) */
+.post-meta small {
+    color: #a1a1a1; /* Light grey for metadata */
+    font-size: 0.9rem;
+}
+
+/* No posts available message */
+p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}

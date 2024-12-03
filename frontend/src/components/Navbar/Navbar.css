@@ -1,0 +1,78 @@
+/* Navbar Container */
+.navbar {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Styling */
+.navbar-logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navbar Links Section */
+.navbar-links {
+    display: flex; /* Ensures the links are in a row */
+    gap: 50px; /* Adds consistent space between links */
+}
+
+/* Link Styling */
+.navbar-links a {
+
+    padding: 10px;
+
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+    color: #507fff; /* Coral color on hover */
+}
+
+.navbar-links a:active {
+    color: #98abff; /* Lighter coral for active state */
+}
+/* Actions Section Styling */
+.navbar-actions {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+}
+
+/* Button Styles */
+.navbar-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar-signup {
+    background-color: #ff507f;
+    color: #ffffff;
+}
+
+.navbar-signup:hover {
+    background-color: #ff779f;
+}
+
+.navbar-login {
+    background-color: #ffffff;
+    color: #1e1e1e;
+}
+
+.navbar-login:hover {
+    background-color: #e0e0e0;
+}

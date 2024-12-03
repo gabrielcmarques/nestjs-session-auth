@@ -1,0 +1,109 @@
+/* Overall container styling */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1e1e1e; /* Dark background for the login page */
+    color: #ffffff;
+}
+
+/* Page heading */
+.login-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+/* Login form */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #2e2e2e; /* Slightly lighter background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+/* Input fields */
+.form-group input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    box-shadow: 0 0 4px #507fff; /* Blue outline on focus */
+}
+
+/* Login button */
+.login-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #507fff; /* Primary button color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #4066cc; /* Slightly darker on hover */
+}
+
+.login-button:active {
+    transform: scale(0.98); /* Slight click effect */
+}
+
+/* Password field wrapper for "show password" button */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+/* Show/Hide password button */
+.show-password-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #507fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.show-password-btn:hover {
+    color: #4066cc;
+}
+
+/* Other styles remain the same */
+/* Keep the styles from the earlier implementation of login.css */
