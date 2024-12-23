@@ -31,7 +31,6 @@ const Register: React.FC = () => {
                     body: JSON.stringify(formData),
                 },
             )
-
             const data = await response.json()
             if (response.ok) {
                 alert("User registered successfully!")

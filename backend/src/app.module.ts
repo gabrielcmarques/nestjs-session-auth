@@ -14,9 +14,9 @@ import { PostsModule } from './posts/posts.module';
 import { PrismaService } from './prisma/prisma.service';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
-import { SessionGuard } from './auth/session.guard';
+// import { SessionGuard } from './auth/session.guard';
 import { SessionCleanupTask } from './tasks/session-cleanup.task';
-import { APP_GUARD } from '@nestjs/core';
+// import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -29,10 +29,10 @@ import { APP_GUARD } from '@nestjs/core';
   controllers: [AppController],
   providers: [
     SessionCleanupTask,
-    {
-      provide: APP_GUARD,
-      useClass: SessionGuard,
-    },
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: SessionGuard,
+    // },
     PrismaService,
     AppService,
   ],

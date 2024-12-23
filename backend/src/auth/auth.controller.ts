@@ -13,7 +13,7 @@ import { AuthService } from './auth.service';
 import { UserService } from 'src/user/user.service';
 import { Response } from 'express';
 import * as dayjs from 'dayjs';
-import { SessionGuard } from './session.guard';
+// import { SessionGuard } from './session.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -29,9 +29,10 @@ export class AuthController {
     @Body('name') name: string,
     @Res() res: Response,
   ) {
+  console.log(`HERTERERE`)
     try {
       const user = await this.userService.register(email, password, name);
-      // console.log(`USER @ Register()`, user);
+      console.log(`USER @ Register()`, user);
       return res.status(HttpStatus.CREATED).send({
         message: 'User registered successfully',
         user: { id: user.id, email: user.email, name: user.name },
@@ -47,8 +48,9 @@ export class AuthController {
     @Body('password') password: string,
     @Res() res: Response,
   ) {
+    console.log(`HERERERERERE`);
     const user = await this.userService.validateUser(email, password);
-
+    console.log(user);
     if (!user) {
       throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
     }
@@ -85,9 +87,9 @@ export class AuthController {
   }
 
   // Example of using the SessionGuard for a specific route
-  @Post('protected-route')
-  @UseGuards(SessionGuard) // Protect this route with SessionGuard
-  async protectedRoute(@Res() res: Response) {
-    return res.status(HttpStatus.OK).send({ message: 'You have access!' });
-  }
+  // @Post('protected-route')
+  // @UseGuards(SessionGuard) // Protect this route with SessionGuard
+  // async protectedRoute(@Res() res: Response) {
+  //   return res.status(HttpStatus.OK).send({ message: 'You have access!' });
+  // }
 }
